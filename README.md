@@ -3,13 +3,14 @@
 Hi.. this is step by step to install extension on Cursor IDE and push readme to github
 
 
-** Whats tools installed ? **
+**Whats tools installed ?**
 1. IDE cursor
 2. Claude code extension
 3. Codex extension
 
 
-** Steps? **
+
+**Steps?**
 1. download IDE code editor that is Cursor, you can access in https://cursor.com/
 2. install Cursor
 3. open IDE, creating the account of Cursor and login
@@ -24,7 +25,8 @@ Hi.. this is step by step to install extension on Cursor IDE and push readme to 
 12. to push on github, click sync changes
 
 
-** What issues and how to solved them? **
+
+**What issues and how to solved them?**
 - I cant find the extension icon, how to solved? I click the menubar View and then click extension
 
 

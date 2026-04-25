@@ -4,7 +4,7 @@ import requests
 import time
 from datetime import datetime
 from pathlib import Path
-
+import html
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 from youtube_transcript_api._errors import VideoUnavailable
@@ -63,7 +63,7 @@ def youtube_channel_id_from_handle(handle):
         return None
     return items[0]["id"]
 
-def fetch_latest_videos(channel_id, max_results=5):
+def fetch_latest_videos(channel_id, max_results=10):
     """Fetch the latest videos for a channel ID."""
     url = (
         f"https://www.googleapis.com/youtube/v3/search?"
@@ -95,21 +95,24 @@ def save_transcript_markdown(expert_name, video, transcript, fetch_dt):
     expert_dir = TRANSCRIPT_ROOT / safe_name
     expert_dir.mkdir(parents=True, exist_ok=True)
 
-    safe_title = re.sub(r'[\\/*?:"<>|]', '_', video["title"])[:60]
+    safe_title = re.sub(r'[\\/*?:"<>|]', '_', html.unescape(video["title"]))[:60]
     md_path = expert_dir / f"{safe_title}-{video['video_id']}.md"
 
     with md_path.open("w", encoding="utf-8") as f:
-        f.write(f"# {video['title']}\n\n")
+        published = datetime.strptime(video['published_at'], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
+        fetched = datetime.strptime(fetch_dt, "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
+        
+        ff.write(f"# {html.unescape(video['title'])}\n\n")
         f.write(f"- **URL:** {video['url']}\n")
-        f.write(f"- **Published:** {video['published_at']}\n")
-        f.write(f"- **Date Fetched:** {fetch_dt}\n\n")
+        f.write(f"- **Published:** {published}\n")
+        f.write(f"- **Date Fetched:** {fetched}\n\n")
         f.write("## Transcript\n\n")
         for entry in transcript:
-            start = int(entry['start'])
+            start = int(entry.start)
             minutes = start // 60
             seconds = start % 60
             t = f"[{minutes}:{seconds:02d}]"
-            f.write(f"{t} {entry['text']}\n\n")
+            f.write(f"{t} {entry.text}\n\n")
 
 def fetch_and_save_transcripts():
     if not YOUTUBE_API_KEY:
@@ -132,7 +135,7 @@ def fetch_and_save_transcripts():
             print(f"  Failed to find channel ID for handle: @{handle}")
             continue
         try:
-            videos = fetch_latest_videos(channel_id, max_results=5)
+            videos = fetch_latest_videos(channel_id, max_results=10)
         except Exception as e:
             print(f"  Error fetching videos: {e}")
             continue
@@ -140,7 +143,8 @@ def fetch_and_save_transcripts():
         for video in videos:
             print(f"  Video: {video['title']}")
             try:
-                transcript = YouTubeTranscriptApi.get_transcript(video["video_id"])
+                fetcher = YouTubeTranscriptApi()
+                transcript = fetcher.fetch(video["video_id"])
             except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable):
                 print("    No transcript available, skipping.")
                 continue

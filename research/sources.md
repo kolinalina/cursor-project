@@ -56,6 +56,6 @@
 
 ## 10. Brian Dean
 - **LinkedIn:** https://www.linkedin.com/in/brianedean/
-- **YouTube:** https://www.youtube.com/@BacklinkoTeam
+- **YouTube:** https://www.youtube.com/@BacklinkoTeam/videos
 - **Date Added:** 2026-04-25
 - **Annotation:** Founder of Backlinko (acquired by Semrush in 2022) and co-founder of Exploding Topics. Known for the Skyscraper Technique and data-driven content frameworks widely used in SEO.

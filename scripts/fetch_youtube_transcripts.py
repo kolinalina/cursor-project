@@ -17,7 +17,7 @@ SOURCES_MD = Path("research/sources.md")
 TRANSCRIPT_ROOT = Path("research/youtube-transcripts")
 
 YOUTUBE_CHANNEL_URL_RE = re.compile(r"https://www\.youtube\.com/@([A-Za-z0-9_\-]+)/?")
-VIDEO_TOPIC_KEYWORDS_RE = re.compile(r"\b(seo|ai|content|search|ranking)\b", re.IGNORECASE)
+YOUTUBE_SEARCH_QUERY = "SEO AI AI SEO"
 
 def parse_experts_from_sources(sources_md: Path):
     """Parse experts and YouTube channel URLs from sources.md"""
@@ -71,6 +71,7 @@ def fetch_latest_videos(channel_id, max_results=5):
         f"key={YOUTUBE_API_KEY}"
         f"&channelId={channel_id}"
         f"&part=snippet"
+        f"&q={YOUTUBE_SEARCH_QUERY}"
         f"&order=date"
         f"&maxResults={max_results}"
         f"&type=video"
@@ -90,14 +91,12 @@ def fetch_latest_videos(channel_id, max_results=5):
         })
     return videos
 
-def filter_videos_by_title_keywords(videos, max_results=5):
-    """Keep videos whose titles match target SEO/AI/search topics."""
-    filtered = []
-    for video in videos:
-        title = html.unescape(video.get("title", ""))
-        if VIDEO_TOPIC_KEYWORDS_RE.search(title):
-            filtered.append(video)
-    return filtered[:max_results]
+def is_relevant_video_title(title):
+    """Keep only videos clearly related to both SEO and AI."""
+    normalized = html.unescape(title).lower()
+    has_seo = "seo" in normalized or "search engine optimization" in normalized
+    has_ai = " ai " in f" {normalized} " or "artificial intelligence" in normalized
+    return has_seo and has_ai
 
 def slugify_expert_name(expert_name):
     """Convert expert name into a clean folder slug."""
@@ -186,14 +185,13 @@ def fetch_and_save_transcripts():
             print(f"  Failed to find channel ID for handle: @{handle}")
             continue
         try:
-            videos = fetch_latest_videos(channel_id, max_results=10)
+            videos = fetch_latest_videos(channel_id, max_results=5)
         except Exception as e:
             print(f"  Error fetching videos: {e}")
             continue
-
-        videos = filter_videos_by_title_keywords(videos, max_results=5)
+        videos = [v for v in videos if is_relevant_video_title(v["title"])]
         if not videos:
-            print("  No recent videos matched SEO/AI/content/search/ranking keywords.")
+            print("  No relevant SEO+AI videos found, skipping.")
             continue
 
         for video in videos:

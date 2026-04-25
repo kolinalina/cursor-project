@@ -8,6 +8,7 @@ import html
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
 from youtube_transcript_api._errors import VideoUnavailable
+import http.cookiejar
 
 # Load API Key from .env
 load_dotenv()
@@ -100,9 +101,9 @@ def save_transcript_markdown(expert_name, video, transcript, fetch_dt):
 
     with md_path.open("w", encoding="utf-8") as f:
         published = datetime.strptime(video['published_at'], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
-        fetched = datetime.strptime(fetch_dt, "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
-        
-        ff.write(f"# {html.unescape(video['title'])}\n\n")
+        fetched = fetch_dt
+
+        f.write(f"# {html.unescape(video['title'])}\n\n")
         f.write(f"- **URL:** {video['url']}\n")
         f.write(f"- **Published:** {published}\n")
         f.write(f"- **Date Fetched:** {fetched}\n\n")
@@ -143,16 +144,22 @@ def fetch_and_save_transcripts():
         for video in videos:
             print(f"  Video: {video['title']}")
             try:
-                fetcher = YouTubeTranscriptApi()
+                session = requests.Session()
+                session.cookies = http.cookiejar.MozillaCookieJar("cookies.txt")
+                session.cookies.load(ignore_discard=True, ignore_expires=True)
+                fetcher = YouTubeTranscriptApi(http_client=session)
                 transcript = fetcher.fetch(video["video_id"])
             except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable):
                 print("    No transcript available, skipping.")
                 continue
-            fetch_dt = datetime.utcnow().isoformat(timespec='seconds') + "Z"
+            except Exception as e:
+                print(f"    Blocked or error: {e.__class__.__name__}, skipping.")
+                continue
+            fetch_dt = datetime.utcnow().strftime("%Y-%m-%d")
             save_transcript_markdown(name, video, transcript, fetch_dt)
             print("    Transcript saved.")
             # To avoid quota/rate limit issues
-            time.sleep(1)
+            time.sleep(3)
 
 if __name__ == "__main__":
     fetch_and_save_transcripts()

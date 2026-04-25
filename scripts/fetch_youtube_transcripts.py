@@ -2,7 +2,7 @@ import os
 import re
 import requests
 import time
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 import html
 import unicodedata
@@ -15,9 +15,11 @@ SUPADATA_API_KEY = os.getenv("SUPADATA_API_KEY")
 
 SOURCES_MD = Path("research/sources.md")
 TRANSCRIPT_ROOT = Path("research/youtube-transcripts")
+START_EXPERT_INDEX = 1  # 1-based, inclusive
+END_EXPERT_INDEX = 10    # 1-based, inclusive
 
 YOUTUBE_CHANNEL_URL_RE = re.compile(r"https://www\.youtube\.com/@([A-Za-z0-9_\-]+)/?")
-YOUTUBE_SEARCH_QUERY = "SEO AI AI SEO"
+YOUTUBE_SEARCH_QUERY = "ai seo"
 
 def parse_experts_from_sources(sources_md: Path):
     """Parse experts and YouTube channel URLs from sources.md"""
@@ -30,7 +32,15 @@ def parse_experts_from_sources(sources_md: Path):
         if line.startswith("##"):
             if cur_expert:
                 experts.append(cur_expert)
-            cur_expert = {"name": line.strip(" #.")}
+            header = line.strip("# ").strip()
+            num_match = re.match(r"^(\d+)\.\s*(.+)$", header)
+            if num_match:
+                source_index = int(num_match.group(1))
+                name = num_match.group(2).strip()
+            else:
+                source_index = None
+                name = header.strip(". ")
+            cur_expert = {"name": name, "source_index": source_index}
         elif line.startswith("- **YouTube:**"):
             yt_url = line.split("**YouTube:**")[-1].strip()
             cur_expert["youtube_url"] = yt_url if "youtube.com" in yt_url else None
@@ -64,18 +74,19 @@ def youtube_channel_id_from_handle(handle):
         return None
     return items[0]["id"]
 
-def fetch_latest_videos(channel_id, max_results=5):
+def fetch_latest_videos(channel_id, max_results=5, query=None):
     """Fetch the latest videos for a channel ID."""
     url = (
         f"https://www.googleapis.com/youtube/v3/search?"
         f"key={YOUTUBE_API_KEY}"
         f"&channelId={channel_id}"
         f"&part=snippet"
-        f"&q={YOUTUBE_SEARCH_QUERY}"
         f"&order=date"
         f"&maxResults={max_results}"
         f"&type=video"
     )
+    if query:
+        url += f"&q={query}"
     r = requests.get(url)
     r.raise_for_status()
     items = r.json().get("items", [])
@@ -86,17 +97,36 @@ def fetch_latest_videos(channel_id, max_results=5):
         videos.append({
             "video_id": video_id,
             "title": snippet["title"],
+            "description": snippet.get("description", ""),
             "published_at": snippet["publishedAt"],
             "url": f"https://www.youtube.com/watch?v={video_id}"
         })
     return videos
 
-def is_relevant_video_title(title):
-    """Keep only videos clearly related to both SEO and AI."""
-    normalized = html.unescape(title).lower()
-    has_seo = "seo" in normalized or "search engine optimization" in normalized
-    has_ai = " ai " in f" {normalized} " or "artificial intelligence" in normalized
-    return has_seo and has_ai
+def is_relevant_video(video):
+    """Keep videos with SEO intent plus AI intent."""
+    title = html.unescape(video.get("title", "")).lower()
+    description = html.unescape(video.get("description", "")).lower()
+    title_padded = f" {title} "
+    title_has_seo = (
+        "seo" in title
+        or "search engine optimization" in title
+        or "search ranking" in title
+        or "ranking" in title
+    )
+    ai_text = f" {title} {description} "
+    has_ai = (
+        " ai " in ai_text
+        or "artificial intelligence" in ai_text
+        or "chatgpt" in ai_text
+        or "llm" in ai_text
+        or "openai" in ai_text
+        or "claude" in ai_text
+        or "gemini" in ai_text
+        or "deepseek" in ai_text
+        or "perplexity" in ai_text
+    )
+    return title_has_seo and has_ai
 
 def slugify_expert_name(expert_name):
     """Convert expert name into a clean folder slug."""
@@ -136,7 +166,6 @@ def save_transcript_markdown(expert_name, video, transcript, fetch_dt):
     safe_name = slugify_expert_name(expert_name)
     expert_dir = TRANSCRIPT_ROOT / safe_name
     expert_dir.mkdir(parents=True, exist_ok=True)
-
     safe_title = re.sub(r'[\\/*?:"<>|]', '_', html.unescape(video["title"]))[:60]
     md_path = expert_dir / f"{safe_title}.md"
 
@@ -171,6 +200,11 @@ def fetch_and_save_transcripts():
 
     experts = parse_experts_from_sources(SOURCES_MD)
     for expert in experts:
+        source_index = expert.get("source_index")
+        if source_index is None:
+            continue
+        if source_index < START_EXPERT_INDEX or source_index > END_EXPERT_INDEX:
+            continue
         name = expert["name"]
         yt_url = expert["youtube_url"]
         if not yt_url or yt_url.lower() == "linkedin only":
@@ -185,11 +219,11 @@ def fetch_and_save_transcripts():
             print(f"  Failed to find channel ID for handle: @{handle}")
             continue
         try:
-            videos = fetch_latest_videos(channel_id, max_results=5)
+            videos = fetch_latest_videos(channel_id, max_results=30, query=query)
         except Exception as e:
             print(f"  Error fetching videos: {e}")
             continue
-        videos = [v for v in videos if is_relevant_video_title(v["title"])]
+        videos = [v for v in videos if is_relevant_video(v)][:5]
         if not videos:
             print("  No relevant SEO+AI videos found, skipping.")
             continue
@@ -220,7 +254,7 @@ def fetch_and_save_transcripts():
             except Exception as e:
                 print(f"    Unexpected error: {e.__class__.__name__}, skipping.")
                 continue
-            fetch_dt = datetime.utcnow().strftime("%Y-%m-%d")
+            fetch_dt = datetime.now(UTC).strftime("%Y-%m-%d")
             save_transcript_markdown(name, video, transcript, fetch_dt)
             print("    Transcript saved.")
             # To avoid quota/rate limit issues

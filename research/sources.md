@@ -54,8 +54,8 @@
 - **Date Added:** 2026-04-25
 - **Annotation:** SEO agency owner and prolific YouTube creator. Known for hands-on tutorials on bulk AI content generation, content automation workflows, and scaling SEO content production.
 
-## 10. Brian Dean
-- **LinkedIn:** https://www.linkedin.com/in/brianedean/
-- **YouTube:** https://www.youtube.com/@BacklinkoTeam/videos
-- **Date Added:** 2026-04-25
-- **Annotation:** Founder of Backlinko (acquired by Semrush in 2022) and co-founder of Exploding Topics. Known for the Skyscraper Technique and data-driven content frameworks widely used in SEO.
+## 10. Rand Fishkin
+- **LinkedIn:** https://www.linkedin.com/in/randfishkin/
+- **YouTube:** https://www.youtube.com/@randfish/videos
+- **Date Added:** 2026-04-26
+- **Annotation:** Co-founder of Moz and CEO of SparkToro, an audience research platform. Author of Lost and Founder. Publishes data-driven research on AI search behavior and zero-click trends through the State of Search report in partnership with Datos. Known for the "Search Everywhere Optimization" framework and contrarian, evidence-based takes on how AI is reshaping content discovery.

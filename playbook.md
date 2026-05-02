@@ -261,3 +261,20 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 - **SMBs and big companies need different approaches.** This playbook tries to work for everyone, but a solo blogger and a large company have very different challenges. Some recommendations will fit your situation better than others. This playbook attempts to serve both but fits neither perfectly.
 
 ---
+
+## Who I Would NOT Recommend Following
+ 
+### Julian Goldie
+ 
+Julian Goldie is an active practitioner and his tool tutorials can be useful. However, his core philosophy — publish AI content daily, automate everything, and scale volume — is not a sustainable SEO content production strategy.
+ 
+His LinkedIn posts from April 2026 are mostly promotional content for his SEO agency and AI publishing tools, with very little original research or insight about actual SEO content production results.
+
+The problem with his approach is simple: bulk-publishing AI-generated SEO content every day without real expertise or human editing is exactly what Google's scaled content abuse algorithm is designed to penalize. You might see short-term traffic gains, but a single algorithm update can wipe all of it out.
+
+> "SEO rarely fails because of effort. It usually fails because of direction."
+(source: Julian Goldie, linkedin.com/in/juliangoldieseo, 22.04.2026)
+
+His own words prove the point — his direction is the problem, not his effort. For anyone serious about AI-powered SEO content production, the better approach is fewer pieces of high-quality, expert-backed content that AI search systems can verify and cite — not hundreds of generic AI articles that neither rank in Google nor get cited in ChatGPT or Perplexity.
+ 
+For strategic direction, the stronger voices are: **Eli Schwartz** for long-term brand thinking, **Aleyda Solís** for measurement frameworks, **Michael King** for technical depth, and **Nicolas Gorroño** for practical AI content workflow implementation.

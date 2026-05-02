@@ -6,6 +6,7 @@ This playbook is a guide for SEO practitioners and content teams who want to use
 
 ---
  
+
 ## Core Recommendations
  
 ### 1. Build a Context Stack Before Using Any AI Tool for Content
@@ -22,7 +23,7 @@ Build a two-layer context stack and load it into a project in ChatGPT or Claude 
  
 Once built, instruct the AI in project settings to always reference your experience layer when writing, this is what separates AI content that sounds human from AI content that sounds generic.
  
----
+
 
 ### 2. Start Content Strategy With Competitor Analysis, Not Keyword Research
  
@@ -33,7 +34,7 @@ Before generating any content with AI, analyze what is already working in the to
  
 Also check what is being cited in ChatGPT, Perplexity, and Google AI Mode for the same query, the sources AI pulls are often different from the pages that rank 1 in traditional search.
  
----
+
  
 ### 3. Use AI for Content Briefs — Not Final Drafts
  
@@ -52,7 +53,7 @@ The workflow:
 > "Subject matter expertise matters more now than ever. AI content without real expertise gets filtered out."
 (source: Ryan Doser, linkedin.com/in/ryan-doser-ai-marketing, 26.04.2026)
  
----
+
 
 ### 4. Optimize Existing Content Before Publishing New Content
  
@@ -68,7 +69,7 @@ Daily content optimization workflow:
 > "Look for keywords ranking between positions 2 and 15. I call these low-hanging fruits. Fix keyword placement in the title, meta description, H1, and first sentence first."
 (source: Nathan Gotch, youtube.com/watch?v=cmCafFbC1A4, 23.04.2026)
  
----
+
 
 ### 5. Structure Every Piece of Content for AI Extraction
  
@@ -84,7 +85,7 @@ Structural requirements:
 > "Generic content gets ignored. Fact-dense content gets cited."
 (source: Matt Diggity, linkedin.com/in/mattdiggityseo, 26.03.2026)
  
----
+
 
 ### 6. Add Five Trust Signals to Every Piece of Content
  
@@ -100,7 +101,7 @@ Add all five trust signals to every piece of content:
 > "The brands showing up in AI answers are not winning because they have better content. They are winning because AI systems can actually verify what they are saying."
 (source: Michael King, linkedin.com/in/michaelkingphilly, 12.04.2026)
  
----
+
 
 ### 7. Build Reddit Presence to Increase AI Search Citations
  
@@ -115,7 +116,7 @@ Strategy:
 > "I helped a real estate client 20x their AI search traffic using only Reddit. AI referral traffic up 2,814%. 136 AI Overview keywords."
 (source: Matt Diggity, linkedin.com/in/mattdiggityseo, 21.04.2026)
  
----
+
 
 ### 8. Fix Technical SEO for LLM Crawlers
  
@@ -130,7 +131,7 @@ Technical checklist:
 > "Most LLM crawlers don't understand JavaScript. You might accidentally block LLMs in your robots.txt or CDN."
 (source: Kevin Indig, youtube.com/watch?v=inQuKMymHjU, 30.11.2025)
  
----
+
 
 ### 9. Measure AI Visibility With a 3 Layer Framework
  
@@ -143,7 +144,7 @@ Standard analytics cannot capture AI-driven influence. Build a 3 layer measureme
 > "A rising 'Yes' rate among users attributed to Direct or Branded Organic is one of the strongest first-party proxies that AI influence exists beyond what analytics can directly observe."
 (source: Aleyda Solís, linkedin.com/in/aleyda, 25.04.2026)
  
----
+
 
 ### 10. Invest in Brand Marketing as the Long-Term AI Visibility Strategy
  
@@ -152,6 +153,7 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
 > "The best path to improve LLM visibility is brand marketing — not AEO checklists sold by agencies, AI-generated content, or Reddit astroturfing campaigns."
 (source: Eli Schwartz, linkedin.com/in/schwartze, 24.04.2026)
  
+
 ---
 
 
@@ -171,7 +173,7 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
  
 **My take:** I side with Eli Schwartz. The evidence from Google that 2024-2026 algorithm updates consistently shows scaled AI content without genuine expertise gets penalized. Julian Goldie's approach may work in very low-competition niches short-term, but is not sustainable in competitive markets. Quality and brand authority compound better than volume.
  
----
+
  
 ### Disagreement 2: Should SMBs Prioritize AI Search Optimization?
  
@@ -187,7 +189,7 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
  
 **My take:** Both are right depending on context. For SMBs with no content foundation, Ryan Doser is correct to fix fundamentals first. For SMBs already getting organic traffic, Nicolas Gorroño's is correct with conversion data makes a strong case for AI optimization. The deciding factor: is your content already being found? If yes, optimize for AI. If not, build the foundation first.
  
----
+
  
 ### Disagreement 3: Does the AI Tool You Use Matter for SEO Content Production?
  
@@ -209,7 +211,9 @@ in ways that save significant time compared to manually prompting a general-purp
 The right tool does not replace a strong context stack but it amplifies it. Picking the wrong 
 tool wastes time and limits what you can build.
 
+
 ---
+
 
 ## What I Rejected and Why
  
@@ -220,7 +224,7 @@ tool wastes time and limits what you can build.
  
 **Why I rejected this:** Google has a specific algorithm that penalizes sites publishing large volumes of AI-generated content without real expertise behind it. If you bulk-publish AI content every day without a proper context stack or human expert review, two things happen: the content won't rank in Google, and it won't get cited in AI search tools. You end up with a lot of content that does nothing, which is worse than publishing less but better content.
  
----
+
  
 ### Rejected: Using AI Prompts as a Replacement for Real Keyword Data
  
@@ -233,7 +237,9 @@ Rand Fishkin tested this directly and found AI models confidently produce keywor
  
 **Why I rejected this:** AI language models are not databases. They do not have access to real-time search volume or competitive metrics. I do not recommend replacing SEO tools with AI prompts for keyword data, the failure will not be obvious until months of work have been wasted..
  
+
 ---
+
 
 ## My Original Ideas
 
@@ -251,7 +257,9 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 
 **Why it could work:** Most SEO content teams either skip the experience layer or only check Google competitors when doing keyword research. Doing both together means your SEO content has real expertise inside it AND is built to beat the sources AI search already trusts — a combination most competitors are not doing yet, and one that directly improves both traditional SEO rankings and AI search citations.
 
+
 ---
+
 
 ## Weaknesses of This Playbook
  
@@ -260,7 +268,9 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 - **The brand vs. tactics debate is still open.** Eli Schwartz says brand marketing beats AEO tactics, but there is no clear proof yet. How much you invest in brand vs. tactics really depends on your budget, business size, and how fast you need results.
 - **SMBs and big companies need different approaches.** This playbook tries to work for everyone, but a solo blogger and a large company have very different challenges. Some recommendations will fit your situation better than others. This playbook attempts to serve both but fits neither perfectly.
 
+
 ---
+
 
 ## Who I Would NOT Recommend Following
  
@@ -276,5 +286,3 @@ The problem with his approach is simple: bulk-publishing AI-generated SEO conten
 (source: Julian Goldie, linkedin.com/in/juliangoldieseo, 22.04.2026)
 
 His own words prove the point — his direction is the problem, not his effort. For anyone serious about AI-powered SEO content production, the better approach is fewer pieces of high-quality, expert-backed content that AI search systems can verify and cite — not hundreds of generic AI articles that neither rank in Google nor get cited in ChatGPT or Perplexity.
- 
-For strategic direction, the stronger voices are: **Eli Schwartz** for long-term brand thinking, **Aleyda Solís** for measurement frameworks, **Michael King** for technical depth, and **Nicolas Gorroño** for practical AI content workflow implementation.

@@ -252,3 +252,12 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 **Why it could work:** Most SEO content teams either skip the experience layer or only check Google competitors when doing keyword research. Doing both together means your SEO content has real expertise inside it AND is built to beat the sources AI search already trusts — a combination most competitors are not doing yet, and one that directly improves both traditional SEO rankings and AI search citations.
 
 ---
+
+## Weaknesses of This Playbook
+ 
+- **Most research is from English-language, US-centric markets.** The data and case studies in this playbook are mostly from US-based experts. Results may be different in non-English markets like Southeast Asia.
+- **I did not run my own experiments.** Everything in this playbook is based on what experts shared publicly, not tests I ran myself. Your results will depend on your niche, website authority, and content quality.
+- **The brand vs. tactics debate is still open.** Eli Schwartz says brand marketing beats AEO tactics, but there is no clear proof yet. How much you invest in brand vs. tactics really depends on your budget, business size, and how fast you need results.
+- **SMBs and big companies need different approaches.** This playbook tries to work for everyone, but a solo blogger and a large company have very different challenges. Some recommendations will fit your situation better than others. This playbook attempts to serve both but fits neither perfectly.
+
+---

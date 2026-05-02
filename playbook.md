@@ -1,13 +1,13 @@
 # Playbook: AI-Powered SEO Content Production
  
-## Introduction
+## 🗺️ Introduction
 
 This playbook is a guide for SEO practitioners and content teams who want to use AI to produce content in both traditional search engines and AI-powered search platforms like ChatGPT, Perplexity, and Google AI Mode. It covers two interconnected areas: how to use AI tools effectively in the content production process, and how to optimize that content for visibility in AI search. Every recommendation is based on research from 10 active practitioners, and every recommendation cites its source.
 
 ---
- 
+&nbsp;
 
-## Core Recommendations
+## ✅ Core Recommendations
  
 ### 1. Build a Context Stack Before Using Any AI Tool for Content
  
@@ -155,11 +155,11 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
  
 
 ---
+&nbsp;
 
-
-## Where Experts Disagree
+## ⚔️ Where Experts Disagree
  
-### Disagreement 1: Should You Publish AI Content Daily at Scale?
+### 🔴 Disagreement 1: Should You Publish AI Content Daily at Scale?
  
 **Julian Goldie** advocates for using AI tools to publish content daily as the primary SEO growth strategy. More content published consistently compounds traffic over time.
  
@@ -175,7 +175,7 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
  
 
  
-### Disagreement 2: Should SMBs Prioritize AI Search Optimization?
+### 🔴 Disagreement 2: Should SMBs Prioritize AI Search Optimization?
  
 **Ryan Doser** argues AI search is a shiny object for most SMBs — ROI-positive channels are paid traffic, email, and social first.
  
@@ -191,7 +191,7 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
  
 
  
-### Disagreement 3: Does the AI Tool You Use Matter for SEO Content Production?
+### 🔴 Disagreement 3: Does the AI Tool You Use Matter for SEO Content Production?
  
 **Nicolas Gorroño** argues the AI model is irrelevant — context stack matters far more than which model you use.
  
@@ -213,11 +213,11 @@ tool wastes time and limits what you can build.
 
 
 ---
+&nbsp;
 
-
-## What I Rejected and Why
+## 🗑️ What I Rejected and Why
  
-### Rejected: Daily Bulk AI Content Publishing as a Core Strategy
+### 🔴 Rejected: Daily Bulk AI Content Publishing as a Core Strategy
  
 > Julian Goldie recommends using AI tools to research, write, and auto-publish content daily as the primary growth strategy.
 (source: Julian Goldie, linkedin.com/in/juliangoldieseo, 25.04.2026)
@@ -226,7 +226,7 @@ tool wastes time and limits what you can build.
  
 
  
-### Rejected: Using AI Prompts as a Replacement for Real Keyword Data
+### 🔴 Rejected: Using AI Prompts as a Replacement for Real Keyword Data
  
 Some practitioners recommend replacing paid SEO tools with AI prompts for keyword research and search volume estimates.
  
@@ -239,9 +239,9 @@ Rand Fishkin tested this directly and found AI models confidently produce keywor
  
 
 ---
+&nbsp;
 
-
-## My Original Ideas
+## 💡 My Original Ideas
 
 ### Idea: Two Steps Before Writing SEO Content — Expert Interview + AI Citation Check
 
@@ -259,9 +259,9 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 
 
 ---
+&nbsp;
 
-
-## Weaknesses of This Playbook
+## ⚠️ Weaknesses of This Playbook
  
 - **Most research is from English-language, US-centric markets.** The data and case studies in this playbook are mostly from US-based experts. Results may be different in non-English markets like Southeast Asia.
 - **I did not run my own experiments.** Everything in this playbook is based on what experts shared publicly, not tests I ran myself. Your results will depend on your niche, website authority, and content quality.
@@ -270,9 +270,9 @@ Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which
 
 
 ---
+&nbsp;
 
-
-## Who I Would NOT Recommend Following
+## 🚫 Who I Would NOT Recommend Following
  
 ### Julian Goldie
  

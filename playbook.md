@@ -210,3 +210,27 @@ The right tool does not replace a strong context stack but it amplifies it. Pick
 tool wastes time and limits what you can build.
 
 ---
+
+## What I Rejected and Why
+ 
+### Rejected: Daily Bulk AI Content Publishing as a Core Strategy
+ 
+> Julian Goldie recommends using AI tools to research, write, and auto-publish content daily as the primary growth strategy.
+(source: Julian Goldie, linkedin.com/in/juliangoldieseo, 25.04.2026)
+ 
+**Why I rejected this:** Google has a specific algorithm that penalizes sites publishing large volumes of AI-generated content without real expertise behind it. If you bulk-publish AI content every day without a proper context stack or human expert review, two things happen: the content won't rank in Google, and it won't get cited in AI search tools. You end up with a lot of content that does nothing, which is worse than publishing less but better content.
+ 
+---
+ 
+### Rejected: Using AI Prompts as a Replacement for Real Keyword Data
+ 
+Some practitioners recommend replacing paid SEO tools with AI prompts for keyword research and search volume estimates.
+ 
+Rand Fishkin tested this directly and found AI models confidently produce keyword data that is factually incorrect.
+ 
+> "If you copy and paste an AI prompt for keyword data into ChatGPT, it will confidently give you data that is not correct."
+(source: Rand Fishkin, youtube.com/watch?v=1dKcxlQZMwI, 30.10.2025)
+ 
+**Why I rejected this:** AI language models are not databases. They do not have access to real-time search volume or competitive metrics. I do not recommend replacing SEO tools with AI prompts for keyword data, the failure will not be obvious until months of work have been wasted..
+ 
+---

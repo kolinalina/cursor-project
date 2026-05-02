@@ -234,3 +234,21 @@ Rand Fishkin tested this directly and found AI models confidently produce keywor
 **Why I rejected this:** AI language models are not databases. They do not have access to real-time search volume or competitive metrics. I do not recommend replacing SEO tools with AI prompts for keyword data, the failure will not be obvious until months of work have been wasted..
  
 ---
+
+## My Original Ideas
+
+### Idea: Two Steps Before Writing SEO Content — Expert Interview + AI Citation Check
+
+Most experts recommend two things separately — Nicolas Gorroño suggests building a context stack with real experience, and Kevin Indig suggests analyzing competitors before creating content. But none of them combine both into one workflow before writing a single piece of content.
+
+My idea: before writing any content, do two quick steps first.
+
+**Step 1 — Interview your expert using AI**
+Ask Claude or ChatGPT to interview your subject matter expert for 10 minutes about the specific topic. Ask for real examples, failures, and unpopular opinions. Add the transcript to your content brief as a fresh experience layer.
+
+**Step 2 — Check who AI search already cites for that topic**
+Search your target keyword in ChatGPT, Perplexity, and Google AI Mode. See which sources they cite those are your real competitors for AI search, not the pages ranking #1 in Google. Write content that beats those sources, not Google's #1.
+
+**Why it could work:** Most SEO content teams either skip the experience layer or only check Google competitors when doing keyword research. Doing both together means your SEO content has real expertise inside it AND is built to beat the sources AI search already trusts — a combination most competitors are not doing yet, and one that directly improves both traditional SEO rankings and AI search citations.
+
+---

@@ -153,3 +153,60 @@ Tactical AEO checklists produce short-term results. The sustainable path is bran
 (source: Eli Schwartz, linkedin.com/in/schwartze, 24.04.2026)
  
 ---
+
+
+## Where Experts Disagree
+ 
+### Disagreement 1: Should You Publish AI Content Daily at Scale?
+ 
+**Julian Goldie** advocates for using AI tools to publish content daily as the primary SEO growth strategy. More content published consistently compounds traffic over time.
+ 
+> "One article is good; daily publishing is where traffic compounds. That is how sites move from zero to hundreds of clicks per day."
+(source: Julian Goldie, linkedin.com/in/juliangoldieseo, 25.04.2026)
+ 
+**Eli Schwartz** argues that publishing AI content at scale is exactly what Google's scaled content abuse algorithm targets and recovering by publishing more AI content only makes it worse.
+ 
+> "Publishing 'better' AI content is not a pivot; it is slower self-destruction."
+(source: Eli Schwartz, linkedin.com/in/schwartze, 23.04.2026)
+ 
+**My take:** I side with Eli Schwartz. The evidence from Google that 2024-2026 algorithm updates consistently shows scaled AI content without genuine expertise gets penalized. Julian Goldie's approach may work in very low-competition niches short-term, but is not sustainable in competitive markets. Quality and brand authority compound better than volume.
+ 
+---
+ 
+### Disagreement 2: Should SMBs Prioritize AI Search Optimization?
+ 
+**Ryan Doser** argues AI search is a shiny object for most SMBs — ROI-positive channels are paid traffic, email, and social first.
+ 
+> "If you're a small to medium size business, AI search is very overrated and shouldn't be prioritized."
+(source: Ryan Doser, youtube.com/watch?v=9JMnIc84uGQ, 25.03.2026)
+ 
+**Nicolas Gorroño** argues the opposite — AI traffic converts at 15.9% vs. 1.7-2.8% for organic, making it worth prioritizing.
+ 
+> "Traffic from AI search engines converts at around 15.9% while regular organic traffic converts between 1.7 and 2.8%."
+(source: Nicolas Gorroño, youtube.com/watch?v=1jbWF81DKkY, 09.04.2026)
+ 
+**My take:** Both are right depending on context. For SMBs with no content foundation, Ryan Doser is correct to fix fundamentals first. For SMBs already getting organic traffic, Nicolas Gorroño's is correct with conversion data makes a strong case for AI optimization. The deciding factor: is your content already being found? If yes, optimize for AI. If not, build the foundation first.
+ 
+---
+ 
+### Disagreement 3: Does the AI Tool You Use Matter for SEO Content Production?
+ 
+**Nicolas Gorroño** argues the AI model is irrelevant — context stack matters far more than which model you use.
+ 
+> "The AI model that you pick has absolutely nothing to do with the performance it's going to have on your SEO. What really matters is the context stack."
+(source: Nicolas Gorroño, youtube.com/watch?v=Ydo9yu6p7vA, 16.04.2026)
+ 
+**Ryan Doser** argues that Claude Code specifically is a competitive advantage for SEO practitioners who can build custom workflows and tools.
+ 
+> "Claude Code is going to be a massive competitive advantage for people doing SEO. Most SEOs don't code. The ones who do are going to build things nobody else can."
+(source: Ryan Doser, linkedin.com/in/ryan-doser-ai-marketing, 26.04.2026)
+ 
+**My take:** I side with Ryan Doser. While Nicolas Gorroño is right that context stack matters, 
+choosing the right AI tool still makes a meaningful difference in practice especially for 
+SEO content production workflows. Not all AI tools have the same capabilities. Claude Code, 
+for example, can automate research, build custom SEO scripts, and integrate with data sources 
+in ways that save significant time compared to manually prompting a general-purpose chat interface. 
+The right tool does not replace a strong context stack but it amplifies it. Picking the wrong 
+tool wastes time and limits what you can build.
+
+---
